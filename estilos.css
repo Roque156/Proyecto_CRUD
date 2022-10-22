@@ -3,35 +3,31 @@
     margin: 0;
 }
 body{
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+h1{
+    font-size: 3.5em;
+    color: white;
 }
 .cabezera{
-    background-color: #097927;
+    background-color: #6b8383;
 }
 .cabezera a{
     text-decoration: none;
 }
 .create{
-    background-color: aquamarine;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
-.campo{
-    margin-top: 50px;
+.formulario{
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
 }
-.texto p{
-    width: 300px;
-    height: 100px;
-    text-align: center;
-}
-
-.boton{
-    margin-top: 50px;
-}
-h1{
-    font-size: 3.5em;
-}
-h2{
-    font-size: 2.5em;
+.leer{
+    background-color: cadetblue;
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
 }

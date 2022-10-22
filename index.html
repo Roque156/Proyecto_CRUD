@@ -6,29 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nomina</title>
     <link rel="stylesheet" href="./estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="cabezera">
         <a href=""><h1>INICIO</h1></a>
     </header>
+    <h2 class="campo">NOMINA</h2>
     <section class="create">
-        <h2 class="campo">SUELDO</h2>
-    <div class="texto">
-        <p class="campo">
-            Sistema de asignacion de sueldo de empleados de la empresa UFabrica.
-            A continuacion llena los datos solicitados en los campos de manera correcta,
-            antes de enviar la informacion.
-        </p>
+        
+        <form class="formulario">
+            <div>
+                <label for="nombre" >Nombre: </label>
+                <input type="text" id="nombre">
+            </div>
+            <div>
+                <label for="sueldo"> Sueldo: </label>
+                <input type="text" id="sueldo">
+            </div>
+            <div>
+                <button id="button">Agregar</button>
+            </div>
+        </form>
+    
+    <div class="leer" id="read">
+    
     </div>
-        <label class="campo">Nombre del empleado:<input type="text"></label>
-        <label class="campo">Puesto del empleado:<input type="text"></label>
-        <label class="campo">Sueldo asignado:<input type="number"></label>
-        <input class="boton" type="button" value="Agregar">
-
-    </section>
-    <section class="read">
-
     </section>
 
+    <script src="./app.js"></script>
 </body>
 </html>
