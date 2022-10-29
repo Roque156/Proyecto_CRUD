@@ -3,31 +3,72 @@
     margin: 0;
 }
 body{
-    font-family: 'Fuzzy Bubbles', cursive;
+    font-family: 'Roboto', cursive;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 29%, rgba(0,212,255,1) 100%, rgba(107,131,131,0.7231267507002801) 100%);
 }
 h1{
     font-size: 3.5em;
     color: white;
 }
 .cabezera{
-    background-color: #6b8383;
+    background: rgb(25, 20, 71);
 }
 .cabezera a{
     text-decoration: none;
 }
+.menu{
+    margin-top: 0;
+}
+.container {
+    box-sizing: border-box;
+    margin: 10px auto;
+    height: 100%;
+    width: 85%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.9864320728291317) 0%, rgba(0,212,255,0.227328431372549) 0%, rgba(5,6,6,0.3477766106442577) 100%);
+
+}
 .create{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.9864320728291317) 0%, rgba(0,212,255,0.227328431372549) 0%, rgba(5,6,6,0.3477766106442577) 100%);
 }
+.text h3{
+    text-align: center;
+    width: 400px;
+    height: 400px;
+}
+
 .formulario{
-    background-color: aquamarine;
-    width: 200px;
+    width: 500px;
     height: 200px;
-    margin-right: 10px;
+    margin-top: 10px;
+}
+.formulario input{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.formulario button{ 
+    font-size: 1em;
+    border-radius: 10px;
+    color: white;
+    border-color: black;
+    background-color: black;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.formulario label{
+    margin-left: 200px;
+    color: white;
 }
 .leer{
-    background-color: cadetblue;
-    width: 200px;
+    
+    width: 500px;
     height: 200px;
-    margin-left: 10px;
+    margin-top: 10px;
 }

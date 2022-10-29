@@ -5,39 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nomina</title>
-    <link rel="stylesheet" href="./estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estilos.css" />
 </head>
 <body>
     <header class="cabezera">
-        <a href=""><h1>INICIO</h1></a>
+        <a href=""><h1>NOMINA</h1></a>
     </header>
-    <h2 class="campo">NOMINA</h2>
-    <section class="create">
-        
-        <form class="formulario">
-            <div>
-                <label for="nombre" >Nombre: </label>
-                <input type="text" id="nombre">
-            </div>
-            <div>
-                <label for="sueldo"> Sueldo: </label>
-                <input type="text" id="sueldo">
-            </div>
-            <div>
-                <button id="btn">Agregar</button>
-            </div>
-            <div>
-            <button id="btn2" style="display:none">Actualizar</button>
-            </div>
-        </form>
+    <main class="menu">
+        <section class="container">
+            
+          <section class="create">
+             <div class="txt">
+                   <h3>
+                      Ingresa el nombre del empleado asi como el sueldo a recibir.
+                   </h3>
+             </div>
+              <form class="formulario">
+                  <div>
+                    <label for="nombre" >Nombre: </label><br>
+                    <input type="text" id="nombre">
+                  </div>
+                  <div>
+                    <label for="sueldo"> Sueldo: </label><br>
+                    <input type="text" id="sueldo">
+                  </div>
+                  <div>
+                    <button id="btn">Agregar</button>
+                  </div>
+                  <div>
+                    <button id="btn2" style="display:none">Actualizar</button>
+                  </div>
+              </form>
     
-    <div class="leer" id="read">
+              <div class="leer" id="read">
     
-    </div>
-    </section>
+              </div>
+
+          </section>
+        </section>
+    </main>
+    <footer>
+        <p> &copy;NOMINA</p>
+    </footer>
 
     <script src="./app.js"></script>
 </body>
