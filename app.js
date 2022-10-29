@@ -2,11 +2,14 @@
 const nombreUI = document.getElementById('nombre');
 const sueldoUI = document.getElementById('sueldo');
 const btnAgregar = document.getElementById('btn');
-//const btnActualizar = document.getElementById('btn2');
+const btnActualizar = document.getElementById('btn2');
 const divRead = document.getElementById('read');
+let referencia = '';
 
 btnAgregar.addEventListener('click',agregar);
-//btnActualizar.addEventListener('click',actualizar);
+btnActualizar.addEventListener('click',actualizar);
+document.addEventListener('DOMContentLoaded', mostrar);
+
 
 function agregar (e){
     
@@ -23,15 +26,15 @@ function agregar (e){
         id: Date.now()
     };
 
-    let arreglo = JSON.parse(localStorage.getItem("DB"));
+    let arreglo = JSON.parse(localStorage.getItem('DB'));
 
     if (arreglo === null) {
     arreglo = [];
     arreglo.push(objCreado);
-    localStorage.setItem("DB", JSON.stringify(arreglo));
+    localStorage.setItem('DB', JSON.stringify(arreglo));
     } else {
     arreglo.push(objCreado);
-    localStorage.setItem("DB", JSON.stringify(arreglo));
+    localStorage.setItem('DB', JSON.stringify(arreglo));
     }
 
     mostrar();
@@ -42,7 +45,7 @@ function agregar (e){
 
 function mostrar(){
 
-    let datos = JSON.parse(localStorage.getItem("DB"));
+    let datos = JSON.parse(localStorage.getItem('DB'));
 
     if(datos !=null){
     
@@ -60,6 +63,7 @@ function mostrar(){
         let btnEliminar = document.createElement('button');
         btnEliminar.addEventListener('click',eliminar);
         let btnEditar = document.createElement('button');
+        btnEditar.addEventListener('click',editar);
         let textobtnEliminar = document.createTextNode('Eliminar');
         let textobtnEditar = document.createTextNode('Editar');
 
@@ -82,15 +86,56 @@ function eliminar(e){
 
     let buscarElemento = e.path[1].getAttribute('key');
     
-    let datos = JSON.parse(localStorage.getItem("DB"));
+    let datos = JSON.parse(localStorage.getItem('DB'));
     let index = datos.findIndex(element=> element.id == buscarElemento);
 
     datos.splice(index,1);
 
-    localStorage.setItem("DB", JSON.stringify(datos));
+    localStorage.setItem('DB', JSON.stringify(datos));
 
     mostrar();
 
     nombreUI.value = '';
     sueldoUI.value = '';
+}
+
+function editar(e){
+    
+    let buscarElemento = e.path[1].getAttribute('key');
+    
+    let datos = JSON.parse(localStorage.getItem('DB'));
+    let index = datos.findIndex((element)=> element.id == buscarElemento);
+
+    nombreUI.value = datos[index].nombre;
+    sueldoUI.value = datos[index].sueldo;
+
+    btnAgregar.style.display = "none";
+    btnActualizar.style.display ="block"; 
+    
+    referencia = datos[index].id;
+}
+
+function actualizar(){
+    
+    let objCreado ={
+        nombre: nombreUI.value,
+        sueldo: sueldoUI.value,
+        id: referencia
+    }
+    
+    let datos = JSON.parse(localStorage.getItem('DB'));
+    let index = datos.findIndex((element) => element.id == objCreado.id);
+
+    datos.splice(index, 1, objCreado);
+
+    localStorage.setItem('DB', JSON.stringify(datos));
+
+    mostrar();
+
+    btnAgregar.style.display = "none";
+    btnActualizar.style.display ="block"; 
+    
+    nombreUI.value = '';
+    sueldoUI.value = '';
+
 }
